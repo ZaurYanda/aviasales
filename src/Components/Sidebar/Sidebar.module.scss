@@ -1,0 +1,48 @@
+.sidebar {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 230px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    min-width: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a4a4a;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.filterList {
+  margin-bottom: 20px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4a4a4a;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #2196f3;
+  }
+}
+
+.checkbox {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  accent-color: #2196f3;
+  cursor: pointer;
+}

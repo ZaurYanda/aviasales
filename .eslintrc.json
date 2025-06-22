@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:import/recommended",
+    "react-app/jest"
+  ],
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": ["warn", { "code": 120 }],
+    "implicit-arrow-linebreak": "off",
+    "react/react-in-jsx-scope": "off",
+        "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
+      }
+    ],
+    "prettier/prettier": "error",
+     "arrow-body-style": ["error", "as-needed"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "jsx-a11y/label-has-associated-control": "off",
+     "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": "never"
+      }
+    ]
+  }
+}
