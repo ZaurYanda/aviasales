@@ -9,21 +9,24 @@ function SortingTabs() {
   const dispatch = useDispatch();
   const activeSort = useSelector((state) => state.sort.type);
 
-  const handleClick = (index) => {
-    dispatch(setSortType(index));
+  const handleChange = (e) => {
+    dispatch(setSortType(Number(e.target.value)));
   };
 
   return (
-    <div className={styles.sortingTabs}>
+    <div className={styles.sortingTabs} role="radiogroup" aria-label="Сортировка">
       {tabs.map((tab, index) => (
-        <button
-          key={tab}
-          type="button"
-          className={`${styles.tab} ${activeSort === index ? styles.active : ''}`}
-          onClick={() => handleClick(index)}
-        >
-          {tab}
-        </button>
+        <label key={tab} className={styles.tab}>
+          <input
+            type="radio"
+            name="sort"
+            value={index}
+            checked={activeSort === index}
+            onChange={handleChange}
+            className={styles.radio}
+          />
+          <span className={activeSort === index ? styles.active : ''}>{tab}</span>
+        </label>
       ))}
     </div>
   );
